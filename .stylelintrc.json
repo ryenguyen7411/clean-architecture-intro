@@ -1,0 +1,18 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "max-nesting-depth": [4, { "severity": "warning" }],
+    "property-no-vendor-prefix": [true, { "ignoreProperties": ["box-orient", "appearance"]}],
+    "scss/percent-placeholder-pattern": "^[A-Za-z0-9-]+$",
+    "value-no-vendor-prefix": [true, { "ignoreValues": ["box"]}],
+    "selector-max-id": 1,
+    "selector-max-compound-selectors": null,
+    "rule-empty-line-before": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "color-named": null,
+    "selector-no-qualifying-type": null
+  },
+  "ignoreFiles": ["**/*.js*"]
+}
+

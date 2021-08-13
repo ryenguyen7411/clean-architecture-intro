@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "*": ["app/*", "core/*", "*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
+

@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directory structure preserving
+!.keep
+*.orig
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# tern for vim
+.tern-*
+
+# rdb
+*.rdb
+
+# Local environment
+.vscode
+yarn.lock
+package-json.lock
+.env
+variables.js
+.husky/_
+.husky/.gitignore
+
+# Auto-generated
+dist*
+app/assets/styles/main.css
+resource-stats.json
+server/metadata/*.json
