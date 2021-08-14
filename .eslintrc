@@ -45,6 +45,7 @@
     "react/no-did-update-set-state": "off",
     "semi": ["error", "always"],
     // Temporarily disabled
+    "react/jsx-handler-names": "off",
     "no-template-curly-in-string": "off",
     "react/prop-types": "warn"
   }

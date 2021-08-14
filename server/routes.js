@@ -1,6 +1,6 @@
 import * as main from './controllers/main';
 
-const mainGroup = ['GET /*', main.serve];
+const mainGroup = [['GET /*', main.serve]];
 
 const routes = [
   ...mainGroup,
