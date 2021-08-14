@@ -23,6 +23,10 @@ const sharedConfig = {
     pathinfo: false,
     publicPath: '/dist/',
   },
+  resolve: {
+    modules: ['node_modules', 'app', 'core'],
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -72,7 +76,7 @@ const devConfig = {
         use: [
           'style-loader',
           'css-loader',
-          'webfonts-loader'
+          'webfonts-loader',
         ],
       },
     ],

@@ -1,13 +1,13 @@
+import { getServerStore } from 'infra/storage';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Helmet from 'react-helmet';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import getRoutes from 'routes';
-import { getServerStore } from 'store';
 import { matchRoutes, register, render as renderRoutes } from 'utils/routing';
 
-export async function handler (req, res) {
+export async function serve (req, res) {
   const store = getServerStore();
   const routes = getRoutes();
 

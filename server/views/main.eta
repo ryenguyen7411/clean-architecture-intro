@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{= lang}}">
+<html lang="{{= it.lang}}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,40 +11,40 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/dist/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  {{~ title}}
-  {{~ meta}}
-  {{~ link}}
+  {{~ it.title}}
+  {{~ it.meta}}
+  {{~ it.link}}
 
-  {{ if (env === "production") {
-    <link rel="stylesheet" href="/dist/{{{resourceStats.style}}}">
-  } }}
+{{ if (it.env === "production") { }}
+  <link rel="stylesheet" href="/dist/{{it.resourceStats.style}}">
+{{ } }}
 </head>
 
 <body>
-  <div id="body">{{~ body}}</div>
+  <div id="body">{{~ it.body}}</div>
 
   <script type="application/javascript">
-    window.__INITIAL_STATE__ = "{{= state}}";
+    window.__INITIAL_STATE__ = "{{= it.state}}";
   </script>
+{{ if (it.env === "production") { }}
 
-  {{ if (env === "production") {
-  <script type="application/javascript" src="/dist/{{{resourceStats.core}}}" defer></script>
-  <script type="application/javascript" src="/dist/{{{resourceStats.vendor}}}" defer></script>
-  } }}
-  <script type="application/javascript" src="/dist/{{{resourceStats.bundle}}}" defer></script>
+  <script type="application/javascript" src="/dist/{{= it.resourceStats.core}}" defer></script>
+  <script type="application/javascript" src="/dist/{{= it.resourceStats.vendor}}" defer></script>
+{{ } }}
+  <script type="application/javascript" src="/dist/{{= it.resourceStats.bundle}}" defer></script>
+{{ if (it.gtagId) { }}
 
-  {{ if (gtagId) {
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{{gtagId}}}"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{= it.gtagId}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', '{{{gtagId}}}');
+    gtag('config', '{{= it.gtagId}}');
   </script>
-  } }}
+{{ } }}
+{{ if (it.fbPixelId) { }}
 
-  {{ if (fbPixelId) {
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -55,16 +55,16 @@
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window,document,'script',
                 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '{{{fbPixelId}}}');
+    fbq('init', '{{= it.fbPixelId}}');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1"
-    src="https://www.facebook.com/tr?id={{{fbPixelId}}}&ev=PageView
+    src="https://www.facebook.com/tr?id={{= it.fbPixelId}}&ev=PageView
     &noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
-  } }}
+{{ } }}
 </body>
 
 </html>

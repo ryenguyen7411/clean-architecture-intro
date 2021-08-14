@@ -1,5 +1,5 @@
-import App from 'components';
-import HomePage from 'components/pages/home';
+import App from 'presentations';
+import HomePage from 'presentations/views/home';
 
 export default function getRoutes () {
   return [

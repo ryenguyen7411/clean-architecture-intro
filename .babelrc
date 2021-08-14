@@ -1,4 +1,15 @@
 {
   "presets": [["@babel/preset-env", { "useBuiltIns": "usage", "corejs": "3" }], "@babel/preset-react"],
-  "plugins": []
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./app", "./core"],
+        "extensions": [".js", ".jsx", ".scss"],
+        "alias": {
+          ".+": ["./app/\\0", "./core/\\0"]
+        }
+      }
+    ],
+  ]
 }

@@ -1,10 +1,8 @@
+import { Provider, store } from 'infra/storage';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from 'store';
 
 if (process.env.BROWSER) {
-  require('assets/lzFonts.font');
   require('assets/styles/index.scss');
 }
 
