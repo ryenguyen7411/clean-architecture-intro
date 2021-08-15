@@ -1,8 +1,8 @@
 import React, { useState } from 'infra/renderer';
-import KeywordPlanningSearchUseCase from 'usecase/keyword-planning-search';
+import KeywordPlanningUseCase from 'usecase/keyword-planning';
 
 export default function KeywordPlanningSearchBox () {
-  const usecase = new KeywordPlanningSearchUseCase();
+  const usecase = new KeywordPlanningUseCase();
   const [input, setInput] = useState('');
 
   function handleSearch () {
