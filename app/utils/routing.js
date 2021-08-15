@@ -1,5 +1,5 @@
-import { Route, Switch, matchPath } from 'react-router-dom';
-import React from 'react';
+import React from 'infra/renderer';
+import { matchPath, Route, Switch } from 'infra/router';
 
 function ResolvedRoute (props) {
   const route = __resolveRoute(props, props.computedMatch);

@@ -1,9 +1,7 @@
-import { getServerStore } from 'infra/storage';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import React, { ReactDOMServer } from 'infra/renderer';
+import { StaticRouter } from 'infra/router';
+import { getServerStore, Provider } from 'infra/storage';
 import Helmet from 'react-helmet';
-import { Provider } from 'react-redux';
-import { StaticRouter } from 'react-router-dom';
 import getRoutes from 'routes';
 import { matchRoutes, register, render as renderRoutes } from 'utils/routing';
 

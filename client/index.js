@@ -1,6 +1,5 @@
 import { Provider, store } from 'infra/storage';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { ReactDOM } from 'infra/renderer';
 
 if (process.env.BROWSER) {
   require('assets/styles/index.scss');

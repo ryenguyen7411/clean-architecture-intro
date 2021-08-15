@@ -1,5 +1,5 @@
+import React from 'infra/renderer';
 import KeywordPlanningSearchBox from 'presentations/partials/keyword-planning-search-box';
-import React from 'react';
 
 export default function HomePage () {
   return (

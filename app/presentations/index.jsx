@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import React from 'react';
+import React from 'infra/renderer';
 
 export default function App (props) {
   return (

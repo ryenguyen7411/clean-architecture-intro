@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'infra/renderer';
 import KeywordPlanningSearchUseCase from 'usecase/keyword-planning-search';
 
 export default function KeywordPlanningSearchBox () {
