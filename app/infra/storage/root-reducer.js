@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import keywordPlanning from './keyword-planning';
+import Storage from 'infra/storage';
+
+const storage = new Storage();
 
 export default combineReducers({
-  keywordPlanning,
+  keywordPlanning: storage.KeywordPlanning().getReducer(),
 });

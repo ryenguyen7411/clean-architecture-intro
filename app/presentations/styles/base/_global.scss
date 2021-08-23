@@ -1,0 +1,40 @@
+@import './variables';
+@import './placeholders';
+@import './mixins';
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @extend %TEXT;
+  background-color: $ash-gray;
+  color: $black;
+  font-family: $font-stack;
+  line-height: 1.3;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  /** Scrollbar */
+  @media screen and (min-width: 768px) {
+    @include scroll-nice($width: 8px, $height: 8px);
+  }
+}
+
+.screen {
+  &:not(.mobile) {
+    min-width: 1180px;
+  }
+}
+
+.scroll-nice {
+  @include scroll-nice();
+}

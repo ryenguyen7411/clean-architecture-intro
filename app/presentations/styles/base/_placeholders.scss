@@ -1,0 +1,26 @@
+@import './variables';
+
+%text-trimmed {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%popup-fullscreen {
+  border-radius: 0;
+  height: 100%;
+  left: 0;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  transform: none !important;
+  width: 100% !important;
+}
+
+%popup-center {
+  border-radius: 8px;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

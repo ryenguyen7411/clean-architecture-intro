@@ -6,7 +6,7 @@ import getRoutes from 'routes';
 import { matchRoutes, register, render as renderRoutes } from 'utils/routing';
 
 export async function serve (req, res) {
-  const store = getServerStore();
+  const store = getServerStore(res.locals.initialServerState);
   const routes = getRoutes();
 
   const originalUrl = req.baseUrl + req.path;

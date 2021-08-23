@@ -1,0 +1,8 @@
+@import '../base/helpers';
+
+.home-page {
+  text-align: center;
+  .title {
+    @extend %TITLE;
+  }
+}

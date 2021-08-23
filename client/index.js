@@ -2,7 +2,7 @@ import { Provider, store } from 'infra/storage';
 import React, { ReactDOM } from 'infra/renderer';
 
 if (process.env.BROWSER) {
-  require('assets/styles/index.scss');
+  require('presentations/styles/index.scss');
 }
 
 function renderApp () {

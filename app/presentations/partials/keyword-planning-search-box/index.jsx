@@ -1,19 +1,28 @@
-import React, { useState } from 'infra/renderer';
-import KeywordPlanningUseCase from 'usecase/keyword-planning';
+import React, { useEffect, useState } from 'infra/renderer';
 
-export default function KeywordPlanningSearchBox () {
-  const usecase = new KeywordPlanningUseCase();
+export default function KeywordPlanningSearchBox ({ usecase }) {
+  const currentSearchKeyword = usecase.KeywordPlanning().useCurrentSearchKeyword();
+
+  const searchData = usecase.KeywordPlanning().useDataListener(currentSearchKeyword);
   const [input, setInput] = useState('');
+  const [error, setError] = useState();
 
-  function handleSearch () {
-    usecase.onSearch(input);
+  async function handleSearch () {
+    const [err] = await usecase.KeywordPlanning().onSearch(input);
+    if (err) return setError(err.toString());
   }
+
+  useEffect(() => {
+    if (currentSearchKeyword !== input) setInput(currentSearchKeyword);
+  }, [currentSearchKeyword]);
 
   return (
     <div className="keyword-planning-search-box">
-      SEARCH BOX
       <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={handleSearch}>SEARCH</button>
+
+      {error && <div className="text-red">{error}</div>}
+      <div>SEARCH DATA: {JSON.stringify(searchData)}</div>
     </div>
   );
 }
